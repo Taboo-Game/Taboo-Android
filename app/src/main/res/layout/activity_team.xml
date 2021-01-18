@@ -1,9 +1,125 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:weightSum="8"
     tools:context=".TeamActivity">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:layout_marginStart="70dp"
+        android:layout_marginEnd="70dp"
+        android:textSize="25sp"
+        android:text="Takımlar"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:textAllCaps="false"
+        android:layout_weight="1"
+        />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="60dp"
+        android:layout_weight="1"
+        android:layout_gravity="end">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1. Takim"
+            android:textSize="35sp"
+            android:layout_marginEnd="20sp"
+            android:textStyle="bold"/>
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="@color/black"/>
+
+        <TextView
+            android:id="@+id/firstTeamMemberText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:text="1 Kisi"
+            android:textStyle="bold"
+            android:textSize="35sp"/>
+
+    </LinearLayout>
+
+    <Button
+        android:onClick="firstTeamMember"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:background="@drawable/roundbutton"
+        app:icon="@drawable/ic_baseline_add_24"
+        android:layout_marginStart="80dp"
+        />
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="100dp"
+        android:layout_weight="1"
+        android:layout_gravity="start">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="2. Takim"
+            android:textSize="35sp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginStart="20sp"
+            android:textStyle="bold"/>
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="@color/black"/>
+
+        <TextView
+            android:id="@+id/secondTeamMemberText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:text="1 Kisi"
+            android:textStyle="bold"
+            android:textSize="35sp"/>
+
+    </LinearLayout>
+
+    <Button
+        android:onClick="secondTeamMember"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:background="@drawable/roundbutton"
+        app:icon="@drawable/ic_baseline_add_24"
+        android:layout_marginStart="260dp"
+        />
+
+    <Button
+        android:onClick="startGameButton"
+        android:layout_width="match_parent"
+        android:layout_marginStart="70dp"
+        android:layout_marginEnd="70dp"
+        android:layout_weight="0.7"
+        android:layout_height="wrap_content"
+        android:text="Oyuna Başla!"
+        android:layout_marginTop="50dp"
+        android:textSize="25sp"
+        android:padding="15dp"
+        />
+
+
+</LinearLayout>
