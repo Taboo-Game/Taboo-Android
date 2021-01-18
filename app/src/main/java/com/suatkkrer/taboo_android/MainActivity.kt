@@ -2,6 +2,7 @@ package com.suatkkrer.taboo_android
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -10,4 +11,9 @@ class MainActivity : AppCompatActivity() {
         
 
     }
+
+    fun ClassicTaboo(view: View) {}
+    fun DrawTaboo(view: View) {}
+    fun Settings(view: View) {}
+    fun AboutGame(view: View) {}
 }
