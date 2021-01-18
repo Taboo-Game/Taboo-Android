@@ -16,7 +16,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun ClassicTaboo(view: View) {
-        val intent = Intent(this,TeamActivity::class.java)
+        val intent = Intent(this,TabooActivity::class.java)
         startActivity(intent)
     }
     fun DrawTaboo(view: View) {
