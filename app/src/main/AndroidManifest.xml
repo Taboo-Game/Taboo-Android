@@ -9,7 +9,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.TabooAndroid">
-        <activity android:name=".SettingsActivity"></activity>
+        <activity android:name=".ResultActivity"></activity>
+        <activity android:name=".TabooActivity" />
+        <activity android:name=".MyWordsActivity" />
+        <activity android:name=".AddWordsActivity" />
+        <activity android:name=".AboutGameActivity" />
+        <activity android:name=".SettingsActivity" />
         <activity android:name=".DrawGameActivity" />
         <activity android:name=".TeamActivity" />
         <activity android:name=".MainActivity">
