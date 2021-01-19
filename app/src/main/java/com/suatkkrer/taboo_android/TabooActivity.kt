@@ -139,22 +139,22 @@ class TabooActivity : AppCompatActivity() {
         tabooList.add(WordModel("AYDINLATMAK","GÖRÜNMEK","IŞIK","BİLGİLENDİRMEK","KARANLIK","GİDERMEK"))
         tabooList.add(WordModel("ÇALMAK","POLİS","HIRSIZ","ARANMAK","İZİN","EV"))
         tabooList.add(WordModel("ÇATLAK","ARALIK","AYRILMAK","DELİ","ARA","YARILMAK"))
-        tabooList.add(WordModel("asdfa","asdfasdf","asdfasf","asfasgd","asdgsadg","asdgasg"))
-        tabooList.add(WordModel("asdfa","asdfasdf","asdfasf","asfasgd","asdgsadg","asdgasg"))
-        tabooList.add(WordModel("asdfa","asdfasdf","asdfasf","asfasgd","asdgsadg","asdgasg"))
-        tabooList.add(WordModel("asdfa","asdfasdf","asdfasf","asfasgd","asdgsadg","asdgasg"))
-        tabooList.add(WordModel("asdfa","asdfasdf","asdfasf","asfasgd","asdgsadg","asdgasg"))
-        tabooList.add(WordModel("asdfa","asdfasdf","asdfasf","asfasgd","asdgsadg","asdgasg"))
-        tabooList.add(WordModel("asdfa","asdfasdf","asdfasf","asfasgd","asdgsadg","asdgasg"))
-        tabooList.add(WordModel("asdfa","asdfasdf","asdfasf","asfasgd","asdgsadg","asdgasg"))
-        tabooList.add(WordModel("asdfa","asdfasdf","asdfasf","asfasgd","asdgsadg","asdgasg"))
-        tabooList.add(WordModel("asdfa","asdfasdf","asdfasf","asfasgd","asdgsadg","asdgasg"))
-        tabooList.add(WordModel("asdfa","asdfasdf","asdfasf","asfasgd","asdgsadg","asdgasg"))
-        tabooList.add(WordModel("asdfa","asdfasdf","asdfasf","asfasgd","asdgsadg","asdgasg"))
-        tabooList.add(WordModel("asdfa","asdfasdf","asdfasf","asfasgd","asdgsadg","asdgasg"))
-        tabooList.add(WordModel("asdfa","asdfasdf","asdfasf","asfasgd","asdgsadg","asdgasg"))
-        tabooList.add(WordModel("asdfa","asdfasdf","asdfasf","asfasgd","asdgsadg","asdgasg"))
-        tabooList.add(WordModel("asdfa","asdfasdf","asdfasf","asfasgd","asdgsadg","asdgasg"))
+        tabooList.add(WordModel("ALİM","BİLGE","AKILLI","ZEKİ","HOCA","BİLGİN"))
+        tabooList.add(WordModel("LEKE","İZ","ÇAMAŞIR","RENK","ÇIKARTMAK","KİR"))
+        tabooList.add(WordModel("BİLMECE","TEKERLEME","SORMAK","OYUN","BULMACA","GİZLİ"))
+        tabooList.add(WordModel("LAPTOP","ELDE","BİLGİSAYAR","ÇANTA","MASAÜSTÜ","KASASIZ"))
+        tabooList.add(WordModel("EMEKLEMEK","BEBEK","SÜRÜNMEK","YÜRÜMEZ","DİZ","YER"))
+        tabooList.add(WordModel("TUĞLA","BLOK","DUVAR","İNŞAAT","MALZEME","YAPI"))
+        tabooList.add(WordModel("SAĞLAM","SAĞLIKLI","SIHHATLİ","BOZULMAZ","DAYANIKLI","YIKILMAZ"))
+        tabooList.add(WordModel("BİBERON","BEBEK","SÜT","ANNE","EMZİK","YEMEK"))
+        tabooList.add(WordModel("KAZMA","TOPRAK","İŞLEMEK","DÜZELTMEK","ÇAPA","ARAÇ"))
+        tabooList.add(WordModel("TEKRAR","BİR DAHA","GENE","YENİDEN","YAPMAK","YİNE"))
+        tabooList.add(WordModel("AĞZINDAN KAÇIRMAK","AÇIĞA VURMAK","ORTAYA ÇIKARTMAK","POT KIRMAK","GERÇEK","DOĞRU"))
+        tabooList.add(WordModel("MAKİNE","CİHAZ","ÇALIŞMAK","BOZULMAK","MÜHENDİS","ALET"))
+        tabooList.add(WordModel("METAL","AMETAL","İLETKEN","MADEN","DEMİR","KİMYA"))
+        tabooList.add(WordModel("YABANCI","DİL","LİSAN","AVRUPA","TURİST","FARKLI"))
+        tabooList.add(WordModel("GÖÇ","DEĞİŞTİRMEK","KUŞ","GİTMEK","TAŞINMAK","HAYVAN"))
+        tabooList.add(WordModel("149)\tKÜSMEK ","DARILMAK ","KIZMAK ","KONUŞMAK ","TARTIŞMAK ","KAVGA"))
         tabooList.add(WordModel("asdfa","asdfasdf","asdfasf","asfasgd","asdgsadg","asdgasg"))
         tabooList.add(WordModel("asdfa","asdfasdf","asdfasf","asfasgd","asdgsadg","asdgasg"))
         tabooList.add(WordModel("asdfa","asdfasdf","asdfasf","asfasgd","asdgsadg","asdgasg"))
@@ -317,14 +317,27 @@ class TabooActivity : AppCompatActivity() {
         tabooList.add(WordModel("asdfa","asdfasdf","asdfasf","asfasgd","asdgsadg","asdgasg"))
         tabooList.add(WordModel("asdfa","asdfasdf","asdfasf","asfasgd","asdgsadg","asdgasg"))
 
-        kelimeMain.text = tabooList[0].anaKelime
-        kelime1.text = tabooList[0].kelime1
-        kelime2.text = tabooList[0].kelime2
-        kelime3.text = tabooList[0].kelime3
-        kelime4.text = tabooList[0].kelime4
-        kelime5.text = tabooList[0].kelime5
+        var random = (0..tabooList.size).random()
+
+        kelimeMain.text = tabooList[random].anaKelime
+        kelime1.text = tabooList[random].kelime1
+        kelime2.text = tabooList[random].kelime2
+        kelime3.text = tabooList[random].kelime3
+        kelime4.text = tabooList[random].kelime4
+        kelime5.text = tabooList[random].kelime5
 
 
 
+    }
+
+    fun randomWord(view: View) {
+        var random = (0..tabooList.size).random()
+
+        kelimeMain.text = tabooList[random].anaKelime
+        kelime1.text = tabooList[random].kelime1
+        kelime2.text = tabooList[random].kelime2
+        kelime3.text = tabooList[random].kelime3
+        kelime4.text = tabooList[random].kelime4
+        kelime5.text = tabooList[random].kelime5
     }
 }
