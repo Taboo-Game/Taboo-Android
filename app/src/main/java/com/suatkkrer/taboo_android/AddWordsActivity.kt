@@ -46,7 +46,7 @@ class AddWordsActivity : AppCompatActivity() {
                 statement.bindString(6,addword5)
                 statement.execute()
 
-                Toast.makeText(this,"...",Toast.LENGTH_LONG).show()
+                Toast.makeText(this,"`...",Toast.LENGTH_LONG).show()
 
             } else {
                 Toast.makeText(this,"Lütfen Tüm Alanları Doldurun...",Toast.LENGTH_LONG).show()
