@@ -1,9 +1,162 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".AddWordsActivity">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="500dp"
+        android:background="@drawable/gradient_black"
+        android:layout_marginEnd="20dp"
+        android:layout_marginStart="20dp"
+        android:orientation="vertical"
+        android:layout_marginTop="70dp">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:textColorHint="@color/white"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:layout_marginStart="15dp"
+            android:id="@+id/addMainWord"
+            app:hintTextColor="@color/white"
+            android:layout_marginEnd="15dp"
+            android:hint="Anlatılacak Kelime"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:textSize="25sp"
+                android:textColor="@color/white"
+                android:layout_height="wrap_content"/>
+
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:textColorHint="@color/white"
+            android:layout_height="wrap_content"
+            android:id="@+id/addWord1"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="15dp"
+            app:hintTextColor="@color/white"
+            android:layout_marginEnd="15dp"
+            android:hint="Kelime 1"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:textSize="20sp"
+                android:textColor="@color/white"
+                android:layout_height="wrap_content"/>
+
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:textColorHint="@color/white"
+            android:layout_height="wrap_content"
+            android:id="@+id/addWord2"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="15dp"
+            app:hintTextColor="@color/white"
+            android:layout_marginEnd="15dp"
+            android:hint="Kelime 2"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:textSize="20sp"
+                android:textColor="@color/white"
+                android:layout_height="wrap_content"/>
+
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:textColorHint="@color/white"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:id="@+id/addWord3"
+            android:layout_marginStart="15dp"
+            app:hintTextColor="@color/white"
+            android:layout_marginEnd="15dp"
+            android:hint="Kelime 3"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:textSize="20sp"
+                android:textColor="@color/white"
+                android:layout_height="wrap_content"/>
+
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:textColorHint="@color/white"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:id="@+id/addWord4"
+            android:layout_marginStart="15dp"
+            app:hintTextColor="@color/white"
+            android:layout_marginEnd="15dp"
+            android:hint="Kelime 4"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:textSize="20sp"
+                android:textColor="@color/white"
+                android:layout_height="wrap_content"/>
+
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:textColorHint="@color/white"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:id="@+id/addWord5"
+            android:layout_marginStart="15dp"
+            app:hintTextColor="@color/white"
+            android:layout_marginEnd="15dp"
+            android:hint="Kelime 5"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:textSize="20sp"
+                android:textColor="@color/white"
+                android:layout_height="wrap_content"/>
+
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+    </LinearLayout>
+
+    <Button
+        android:onClick="addWordsDatabase"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginTop="30sp"
+        android:text="Kelimeyi Ekle"
+        android:textSize="20sp"
+        android:textAllCaps="false"
+        />
+
+
+</LinearLayout>

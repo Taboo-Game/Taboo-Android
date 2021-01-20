@@ -30,6 +30,16 @@
         android:background="#30475e"
         >
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:layout_marginStart="10dp"
+            android:text="Pas Hakkı"
+            />
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -41,7 +51,7 @@
                 android:layout_width="250dp"
                 android:layout_marginStart="10dp"
                 android:layout_height="20dp"
-                android:layout_marginTop="48dp"
+                android:layout_marginTop="8dp"
                 android:max="10"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
@@ -51,7 +61,7 @@
             <TextView
                 android:id="@+id/passText"
                 android:textColor="@color/white"
-                android:layout_marginTop="48dp"
+                android:layout_marginTop="8dp"
                 android:layout_marginStart="15dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -60,6 +70,16 @@
                 />
 
         </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:layout_marginStart="10dp"
+            android:text="Süre"
+            />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -72,7 +92,7 @@
                 android:layout_width="250dp"
                 android:layout_marginStart="10dp"
                 android:layout_height="20dp"
-                android:layout_marginTop="28dp"
+                android:layout_marginTop="5dp"
                 android:max="90"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
@@ -82,7 +102,7 @@
             <TextView
                 android:id="@+id/timeText"
                 android:textColor="@color/white"
-                android:layout_marginTop="28dp"
+                android:layout_marginTop="5dp"
                 android:layout_marginStart="15dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -91,6 +111,16 @@
                 />
 
         </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:layout_marginStart="10dp"
+            android:text="Kazanma Puanı"
+            />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -103,7 +133,7 @@
                 android:layout_width="250dp"
                 android:layout_marginStart="10dp"
                 android:layout_height="20dp"
-                android:layout_marginTop="28dp"
+                android:layout_marginTop="5dp"
                 android:max="50"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
@@ -113,13 +143,58 @@
             <TextView
                 android:id="@+id/aimText"
                 android:textColor="@color/white"
-                android:layout_marginTop="28dp"
+                android:layout_marginTop="5dp"
                 android:layout_marginStart="15dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="20sp"
                 android:text="50"
                 />
+
+        </LinearLayout>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Kelimelerim"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="25dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:layout_marginEnd="40dp"
+            android:layout_marginTop="15dp"
+            android:orientation="horizontal"
+            >
+
+            <ImageButton
+                android:onClick="addWords"
+                android:layout_width="120dp"
+                android:layout_height="70dp"
+                android:background="@mipmap/ic_launcher_round"
+                />
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="@color/white"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"
+                />
+
+            <ImageButton
+                android:onClick="myWords"
+                android:layout_width="120dp"
+                android:layout_height="70dp"
+                android:background="@mipmap/ic_launcher_round"
+                />
+
+
 
         </LinearLayout>
 
