@@ -1,8 +1,10 @@
-package com.suatkkrer.taboo_android
+package com.suatkkrer.taboo_android.Activities
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import com.suatkkrer.taboo_android.R
+import com.suatkkrer.taboo_android.Model.WordModel
 import kotlinx.android.synthetic.main.activity_taboo.*
 import java.util.ArrayList
 

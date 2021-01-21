@@ -1,14 +1,12 @@
-package com.suatkkrer.taboo_android
+package com.suatkkrer.taboo_android.Activities
 
 import android.content.Context
-import android.database.sqlite.SQLiteDatabase
-import android.database.sqlite.SQLiteStatement
-import android.opengl.Visibility
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Editable
 import android.view.View
 import android.widget.Toast
+import com.suatkkrer.taboo_android.R
 import kotlinx.android.synthetic.main.activity_add_words.*
 import java.lang.Exception
 

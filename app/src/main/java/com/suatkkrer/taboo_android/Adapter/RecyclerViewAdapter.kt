@@ -1,12 +1,11 @@
-package com.suatkkrer.taboo_android
+package com.suatkkrer.taboo_android.Adapter
 
-import android.net.sip.SipSession
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.AdapterView
-import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
+import com.suatkkrer.taboo_android.R
+import com.suatkkrer.taboo_android.Model.WordModel
 import kotlinx.android.synthetic.main.word_list.view.*
 
 class RecyclerViewAdapter(private val wordList: ArrayList<WordModel>, private val listener: Listener) : RecyclerView.Adapter<RecyclerViewAdapter.RowHolder>() {

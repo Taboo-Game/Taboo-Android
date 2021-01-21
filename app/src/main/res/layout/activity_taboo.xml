@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:weightSum="6"
-    tools:context=".TabooActivity">
+    tools:context=".Activities.TabooActivity">
 
     <TextView
         android:id="@+id/kelimeMain"

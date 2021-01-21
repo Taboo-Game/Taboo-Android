@@ -1,9 +1,10 @@
-package com.suatkkrer.taboo_android
+package com.suatkkrer.taboo_android.Activities
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import com.suatkkrer.taboo_android.R
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -16,19 +17,19 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun ClassicTaboo(view: View) {
-        val intent = Intent(this,TabooActivity::class.java)
+        val intent = Intent(this, TabooActivity::class.java)
         startActivity(intent)
     }
     fun DrawTaboo(view: View) {
-        val intent = Intent(this,DrawGameActivity::class.java)
+        val intent = Intent(this, DrawGameActivity::class.java)
         startActivity(intent)
     }
     fun Settings(view: View) {
-        val intent = Intent(this,SettingsActivity::class.java)
+        val intent = Intent(this, SettingsActivity::class.java)
         startActivity(intent)
     }
     fun AboutGame(view: View) {
-        val intent = Intent(this,AboutGameActivity::class.java)
+        val intent = Intent(this, AboutGameActivity::class.java)
         startActivity(intent)
     }
 }

@@ -9,15 +9,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.TabooAndroid">
-        <activity android:name=".ResultActivity"></activity>
-        <activity android:name=".TabooActivity" />
-        <activity android:name=".MyWordsActivity" />
-        <activity android:name=".AddWordsActivity" />
-        <activity android:name=".AboutGameActivity" />
-        <activity android:name=".SettingsActivity" />
-        <activity android:name=".DrawGameActivity" />
-        <activity android:name=".TeamActivity" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".Activities.ResultActivity"></activity>
+        <activity android:name=".Activities.TabooActivity" />
+        <activity android:name=".Activities.MyWordsActivity" />
+        <activity android:name=".Activities.AddWordsActivity" />
+        <activity android:name=".Activities.AboutGameActivity" />
+        <activity android:name=".Activities.SettingsActivity" />
+        <activity android:name=".Activities.DrawGameActivity" />
+        <activity android:name=".Activities.TeamActivity" />
+        <activity android:name=".Activities.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

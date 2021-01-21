@@ -1,10 +1,11 @@
-package com.suatkkrer.taboo_android
+package com.suatkkrer.taboo_android.Activities
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.SeekBar
+import com.suatkkrer.taboo_android.R
 import kotlinx.android.synthetic.main.activity_settings.*
 
 class SettingsActivity : AppCompatActivity() {
@@ -62,11 +63,11 @@ class SettingsActivity : AppCompatActivity() {
 
 
     fun myWords(view: View) {
-        val intent = Intent(this,MyWordsActivity::class.java)
+        val intent = Intent(this, MyWordsActivity::class.java)
         startActivity(intent)
     }
     fun addWords(view: View) {
-        val intent = Intent(this,AddWordsActivity::class.java)
+        val intent = Intent(this, AddWordsActivity::class.java)
         startActivity(intent)
     }
 }

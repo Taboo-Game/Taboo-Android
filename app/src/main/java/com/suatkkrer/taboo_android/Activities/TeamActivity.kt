@@ -1,8 +1,9 @@
-package com.suatkkrer.taboo_android
+package com.suatkkrer.taboo_android.Activities
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import com.suatkkrer.taboo_android.R
 
 class TeamActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

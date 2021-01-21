@@ -1,4 +1,4 @@
-package com.suatkkrer.taboo_android
+package com.suatkkrer.taboo_android.Model
 
 class WordModel (anaKelime : String, kelime1 : String, kelime2 : String, kelime3 : String, kelime4 : String, kelime5 : String){
 
