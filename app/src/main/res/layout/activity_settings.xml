@@ -5,6 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:weightSum="10"
+    android:background="#30475e"
     tools:context=".Activities.SettingsActivity">
 
     <Button
@@ -21,18 +23,19 @@
         />
 
     <LinearLayout
+        android:layout_weight="9"
         android:layout_width="match_parent"
-        android:layout_height="500dp"
+        android:layout_height="0dp"
+        android:weightSum="18"
         android:orientation="vertical"
-        android:layout_marginTop="40dp"
-        android:layout_marginEnd="40dp"
-        android:layout_marginStart="40dp"
-        android:background="#30475e"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="10dp"
         >
 
         <TextView
+            android:layout_weight="1.5"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="0dp"
             android:layout_marginTop="20dp"
             android:textColor="@color/white"
             android:textSize="20sp"
@@ -41,8 +44,9 @@
             />
 
         <LinearLayout
+            android:layout_weight="1.5"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="0dp"
             android:orientation="horizontal"
             >
 
@@ -72,18 +76,20 @@
         </LinearLayout>
 
         <TextView
+            android:layout_weight="1.5"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="10dp"
             android:textColor="@color/white"
             android:textSize="20sp"
             android:layout_marginStart="10dp"
-            android:text="Süre"
+            android:text="Anlatma Süresi"
             />
 
         <LinearLayout
+            android:layout_weight="1.5"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="0dp"
             android:orientation="horizontal"
             >
 
@@ -113,9 +119,53 @@
         </LinearLayout>
 
         <TextView
+            android:layout_weight="1.5"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="10dp"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:layout_marginStart="10dp"
+            android:text="Çizme Süresi"
+            />
+
+        <LinearLayout
+            android:layout_weight="1.5"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:orientation="horizontal"
+            >
+
+            <SeekBar
+                android:id="@+id/drawingSeekBar"
+                android:layout_width="250dp"
+                android:layout_marginStart="10dp"
+                android:layout_height="20dp"
+                android:layout_marginTop="5dp"
+                android:max="180"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/drawingText"
+                android:textColor="@color/white"
+                android:layout_marginTop="5dp"
+                android:layout_marginStart="15dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:text="180"
+                />
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_weight="1.5"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_marginTop="10dp"
             android:textColor="@color/white"
             android:textSize="20sp"
             android:layout_marginStart="10dp"
@@ -123,8 +173,9 @@
             />
 
         <LinearLayout
+            android:layout_weight="1.5"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="0dp"
             android:orientation="horizontal"
             >
 
@@ -155,17 +206,19 @@
 
 
         <TextView
+            android:layout_weight="1.5"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="0dp"
             android:text="Kelimelerim"
             android:textColor="@color/white"
             android:textSize="20sp"
             android:layout_marginStart="10dp"
-            android:layout_marginTop="25dp"/>
+            android:layout_marginTop="5dp"/>
 
         <LinearLayout
+            android:layout_weight="3"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="0dp"
             android:layout_marginStart="40dp"
             android:layout_marginEnd="40dp"
             android:layout_marginTop="15dp"
@@ -173,24 +226,20 @@
             >
 
             <ImageButton
+                android:layout_weight="1"
                 android:onClick="addWords"
-                android:layout_width="120dp"
-                android:layout_height="70dp"
+                android:layout_width="0dp"
+                android:layout_marginEnd="15dp"
+                android:layout_height="wrap_content"
                 android:background="@mipmap/ic_launcher_round"
                 />
 
-            <View
-                android:layout_width="1dp"
-                android:layout_height="match_parent"
-                android:background="@color/white"
-                android:layout_marginStart="5dp"
-                android:layout_marginEnd="5dp"
-                />
 
             <ImageButton
+                android:layout_weight="1"
                 android:onClick="myWords"
-                android:layout_width="120dp"
-                android:layout_height="70dp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
                 android:background="@mipmap/ic_launcher_round"
                 />
 

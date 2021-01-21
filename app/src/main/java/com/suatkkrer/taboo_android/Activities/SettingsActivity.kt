@@ -65,6 +65,7 @@ class SettingsActivity : AppCompatActivity() {
     fun myWords(view: View) {
         val intent = Intent(this, MyWordsActivity::class.java)
         startActivity(intent)
+        finish()
     }
     fun addWords(view: View) {
         val intent = Intent(this, AddWordsActivity::class.java)

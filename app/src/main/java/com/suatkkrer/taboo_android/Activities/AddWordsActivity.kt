@@ -1,6 +1,7 @@
 package com.suatkkrer.taboo_android.Activities
 
 import android.content.Context
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Editable
@@ -83,7 +84,12 @@ class AddWordsActivity : AppCompatActivity() {
                 statement.bindString(6,addword5)
                 statement.execute()
 
-                Toast.makeText(this,"`...",Toast.LENGTH_LONG).show()
+                Toast.makeText(this,"Kelimeniz başarıyla Eklendi...",Toast.LENGTH_LONG).show()
+
+                val intent = Intent(this,MyWordsActivity::class.java)
+                        .setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK)
+                startActivity(intent)
+                finish()
 
             } else {
                 Toast.makeText(this,"Lütfen Tüm Alanları Doldurun...",Toast.LENGTH_LONG).show()
@@ -98,6 +104,82 @@ class AddWordsActivity : AppCompatActivity() {
 
     }
 
-    fun deleteWord(view: View) {}
-    fun editWord(view: View) {}
+    fun deleteWord(view: View) {
+
+        try {
+
+            val sqLiteDatabase = this.openOrCreateDatabase("Words", Context.MODE_PRIVATE,null)
+
+            sqLiteDatabase.execSQL("CREATE TABLE IF NOT EXISTS words(id INTEGER PRIMARY KEY,anakelime TEXT,kelime1 TEXT,kelime2 TEXT,kelime3 TEXT,kelime4 TEXT,kelime5 TEXT)")
+
+            sqLiteDatabase.execSQL("DELETE FROM words WHERE id = $idSql")
+
+            Toast.makeText(this,"Kelime Başarıyla Silindi...",Toast.LENGTH_SHORT).show()
+
+            val intent = Intent(this,MyWordsActivity::class.java)
+                    .setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK)
+
+            startActivity(intent)
+            finish()
+
+        } catch (e : Exception){
+            e.printStackTrace()
+        }
+
+
+    }
+
+    fun editWord(view: View) {
+
+        try {
+
+            val sqLiteDatabase = this.openOrCreateDatabase("Words", Context.MODE_PRIVATE,null)
+
+            sqLiteDatabase.execSQL("CREATE TABLE IF NOT EXISTS words(id INTEGER PRIMARY KEY,anakelime TEXT,kelime1 TEXT,kelime2 TEXT,kelime3 TEXT,kelime4 TEXT,kelime5 TEXT)")
+
+            sqLiteDatabase.execSQL("DELETE FROM words WHERE id = $idSql")
+
+            if (addMainWord.editText!!.text.toString() != "" && addWord1.editText!!.text.toString() != ""
+                    && addWord2.editText!!.text.toString() != "" && addWord3.editText!!.text.toString() != ""
+                    && addWord4.editText!!.text.toString() != ""&& addWord5.editText!!.text.toString() != "") {
+                var addmainWord = addMainWord.editText!!.text.toString()
+                var addword1 = addWord1.editText!!.text.toString()
+                var addword2 = addWord2.editText!!.text.toString()
+                var addword3 = addWord3.editText!!.text.toString()
+                var addword4 = addWord4.editText!!.text.toString()
+                var addword5 = addWord5.editText!!.text.toString()
+
+                var sql = "INSERT INTO words (anakelime,kelime1,kelime2,kelime3,kelime4,kelime5) VALUES (?,?,?,?,?,?)"
+
+                val statement = sqLiteDatabase.compileStatement(sql)
+                statement.bindString(1,addmainWord)
+                statement.bindString(2,addword1)
+                statement.bindString(3,addword2)
+                statement.bindString(4,addword3)
+                statement.bindString(5,addword4)
+                statement.bindString(6,addword5)
+                statement.execute()
+
+                Toast.makeText(this,"Kelimeniz Başarıyla Değiştirildi...",Toast.LENGTH_LONG).show()
+
+                val intent = Intent(this,MyWordsActivity::class.java)
+                        .setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK)
+
+                startActivity(intent)
+                finish()
+
+            } else {
+                Toast.makeText(this,"Lütfen Tüm Alanları Doldurun...",Toast.LENGTH_LONG).show()
+            }
+
+
+
+
+
+
+        } catch (e : Exception){
+            e.printStackTrace()
+        }
+
+    }
 }
