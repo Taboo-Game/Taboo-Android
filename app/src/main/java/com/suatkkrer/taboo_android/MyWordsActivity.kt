@@ -1,16 +1,19 @@
 package com.suatkkrer.taboo_android
 
 import android.content.Context
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import android.widget.AdapterView
+import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.activity_my_words.*
 import java.lang.Exception
 import java.util.ArrayList
 
-class MyWordsActivity : AppCompatActivity(),RecyclerViewAdapter.Listener {
+class MyWordsActivity : AppCompatActivity(), RecyclerViewAdapter.Listener {
 
 
     private var recyclerViewAdapter : RecyclerViewAdapter? = null
@@ -64,7 +67,19 @@ class MyWordsActivity : AppCompatActivity(),RecyclerViewAdapter.Listener {
 
     }
 
-    override fun onItemClick(wordModel: WordModel) {
-
+    override fun onItemClick(position: Int) {
+            val intent = Intent(this,AddWordsActivity::class.java).apply {
+                putExtra("anaKelime", tabooList[position].anaKelime)
+                putExtra("kelime1", tabooList[position].kelime1)
+                putExtra("kelime2", tabooList[position].kelime2)
+                putExtra("kelime3", tabooList[position].kelime3)
+                putExtra("kelime4", tabooList[position].kelime4)
+                putExtra("kelime5", tabooList[position].kelime5)
+                putExtra("id", idList[position])
+                putExtra("MyWords", true)
+            }
+        startActivity(intent)
     }
+
+
 }

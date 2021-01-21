@@ -3,20 +3,59 @@ package com.suatkkrer.taboo_android
 import android.content.Context
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteStatement
+import android.opengl.Visibility
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.text.Editable
 import android.view.View
 import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_add_words.*
 import java.lang.Exception
 
 class AddWordsActivity : AppCompatActivity() {
+
+    var myWords : Boolean? = null
+    var mainWord : String? = null
+    var word1 : String? = null
+    var word2 : String? = null
+    var word3 : String? = null
+    var word4 : String? = null
+    var word5 : String? = null
+    var idSql : Int? = null
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_add_words)
         window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_FULLSCREEN
         actionBar?.hide()
+
+
+        myWords = intent.getBooleanExtra("MyWords",false)
+        mainWord = intent.getStringExtra("anaKelime")
+        word1 = intent.getStringExtra("kelime1")
+        word2 = intent.getStringExtra("kelime2")
+        word3 = intent.getStringExtra("kelime3")
+        word4 = intent.getStringExtra("kelime4")
+        word5 = intent.getStringExtra("kelime5")
+        idSql = intent.getIntExtra("id",-1)
+
+        if (myWords == true) {
+            editWord.visibility = View.VISIBLE
+            deleteWord.visibility = View.VISIBLE
+            saveWord.visibility = View.GONE
+
+            addMainWord.editText!!.text = mainWord!!.toEditable()
+            addWord1.editText!!.text = word1!!.toEditable()
+            addWord2.editText!!.text = word2!!.toEditable()
+            addWord3.editText!!.text = word3!!.toEditable()
+            addWord4.editText!!.text = word4!!.toEditable()
+            addWord5.editText!!.text = word5!!.toEditable()
+
+        }
+
     }
+
+    fun String.toEditable(): Editable =  Editable.Factory.getInstance().newEditable(this)
 
     fun addWordsDatabase(view: View) {
 
@@ -60,4 +99,7 @@ class AddWordsActivity : AppCompatActivity() {
 
 
     }
+
+    fun deleteWord(view: View) {}
+    fun editWord(view: View) {}
 }
