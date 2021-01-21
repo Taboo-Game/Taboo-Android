@@ -1,5 +1,6 @@
 package com.suatkkrer.taboo_android.Activities
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -13,7 +14,11 @@ class TeamActivity : AppCompatActivity() {
         actionBar?.hide()
     }
 
-    fun firstTeamMember(view: View) {}
-    fun secondTeamMember(view: View) {}
-    fun startGameButton(view: View) {}
+
+    fun startGameButton(view: View) {
+        val intent = Intent(this,TabooActivity::class.java)
+        startActivity(intent)
+        finish()
+
+    }
 }

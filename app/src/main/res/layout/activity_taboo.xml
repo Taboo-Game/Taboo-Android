@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="#30475e"
     android:orientation="vertical"
-    android:weightSum="6"
+    android:weightSum="10"
     tools:context=".Activities.TabooActivity">
 
     <TextView
@@ -14,9 +14,10 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:textSize="50sp"
+        android:textColor="@color/white"
         android:textStyle="bold"
         android:text="Kelime"
-        android:layout_weight="1"
+        android:layout_weight="1.5"
         android:layout_marginTop="100dp"
         android:textAlignment="center"
         />
@@ -27,8 +28,9 @@
         android:layout_height="0dp"
         android:textSize="40sp"
         android:textStyle="bold"
+        android:textColor="@color/white"
         android:text="Kelime"
-        android:layout_weight="0.7"
+        android:layout_weight="1.2"
         android:layout_marginTop="30dp"
         android:textAlignment="center"
         />
@@ -39,8 +41,9 @@
         android:layout_height="0dp"
         android:textSize="40sp"
         android:textStyle="bold"
+        android:textColor="@color/white"
         android:text="Kelime"
-        android:layout_weight="0.7"
+        android:layout_weight="1.2"
         android:layout_marginTop="30dp"
         android:textAlignment="center"
         />
@@ -51,8 +54,9 @@
         android:layout_height="0dp"
         android:textSize="40sp"
         android:textStyle="bold"
+        android:textColor="@color/white"
         android:text="Kelime"
-        android:layout_weight="0.7"
+        android:layout_weight="1.2"
         android:layout_marginTop="30dp"
         android:textAlignment="center"
         />
@@ -63,8 +67,9 @@
         android:layout_height="0dp"
         android:textSize="40sp"
         android:textStyle="bold"
+        android:textColor="@color/white"
         android:text="Kelime"
-        android:layout_weight="0.7"
+        android:layout_weight="1.2"
         android:layout_marginTop="30dp"
         android:textAlignment="center"
         />
@@ -75,15 +80,17 @@
         android:layout_height="0dp"
         android:textSize="40sp"
         android:textStyle="bold"
+        android:textColor="@color/white"
         android:text="Kelime"
-        android:layout_weight="0.7"
+        android:layout_weight="1.2"
         android:layout_marginTop="30dp"
         android:textAlignment="center"
         />
 
     <Button
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="1"
         android:layout_marginTop="30dp"
         android:layout_gravity="center"
         android:onClick="randomWord"

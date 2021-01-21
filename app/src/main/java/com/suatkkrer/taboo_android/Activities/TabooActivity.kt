@@ -1,22 +1,40 @@
 package com.suatkkrer.taboo_android.Activities
 
+import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.View
+import android.widget.EditText
+import android.widget.TextView
 import com.suatkkrer.taboo_android.R
 import com.suatkkrer.taboo_android.Model.WordModel
 import kotlinx.android.synthetic.main.activity_taboo.*
+import java.lang.Exception
 import java.util.ArrayList
 
 class TabooActivity : AppCompatActivity() {
 
     var tabooList = ArrayList<WordModel>()
+    lateinit var wordMain : TextView
+    lateinit var word1 : TextView
+    lateinit var word2 : TextView
+    lateinit var word3 : TextView
+    lateinit var word4 : TextView
+    lateinit var word5 : TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_taboo)
         window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_FULLSCREEN
         actionBar?.hide()
+
+        wordMain = findViewById(R.id.kelimeMain)
+        word1 = findViewById(R.id.kelime1)
+        word2 = findViewById(R.id.kelime2)
+        word3 = findViewById(R.id.kelime3)
+        word4 = findViewById(R.id.kelime4)
+        word5 = findViewById(R.id.kelime5)
 
 
         tabooList.add(WordModel("FİİL","İŞ","OLUŞ","HAREKET","EYLEM","SÖZCÜK"))
@@ -271,29 +289,65 @@ class TabooActivity : AppCompatActivity() {
         tabooList.add(WordModel("ZİRAAT","TARIM","ÇİFTÇİ","TOPRAK","HAYVAN","BANKA"))
         tabooList.add(WordModel("PROSPEKTÜS","İLAÇ","ECZANE","OKUMAK","İÇİNDEKİLER","KULLANMAK"))
 
+        try {
 
+            val sqLiteDatabase = this.openOrCreateDatabase("Words", Context.MODE_PRIVATE,null)
 
-        var random = (0..tabooList.size).random()
+            sqLiteDatabase.execSQL("CREATE TABLE IF NOT EXISTS words(id INTEGER PRIMARY KEY,anakelime TEXT,kelime1 TEXT,kelime2 TEXT,kelime3 TEXT,kelime4 TEXT,kelime5 TEXT)")
 
-        kelimeMain.text = tabooList[random].anaKelime
-        kelime1.text = tabooList[random].kelime1
-        kelime2.text = tabooList[random].kelime2
-        kelime3.text = tabooList[random].kelime3
-        kelime4.text = tabooList[random].kelime4
-        kelime5.text = tabooList[random].kelime5
+            val cursor = sqLiteDatabase.rawQuery("SELECT * FROM words",null)
+
+            var anakelimeSQL = cursor.getColumnIndex("anakelime")
+            var kelime1SQL = cursor.getColumnIndex("kelime1")
+            var kelime2SQL = cursor.getColumnIndex("kelime2")
+            var kelime3SQL = cursor.getColumnIndex("kelime3")
+            var kelime4SQL = cursor.getColumnIndex("kelime4")
+            var kelime5SQL = cursor.getColumnIndex("kelime5")
+
+            while (cursor.moveToNext()){
+                tabooList.add(WordModel(cursor.getString(anakelimeSQL),
+                        cursor.getString(kelime1SQL),cursor.getString(kelime2SQL),
+                        cursor.getString(kelime3SQL),cursor.getString(kelime4SQL),cursor.getString(kelime5SQL)))
+            }
+            cursor.close()
+
+        } catch (e : Exception){
+            e.printStackTrace()
+        }
+
+        var random = (0..(tabooList.size-1)).random()
+
+        wordMain.text = tabooList[random].anaKelime
+        word1.text = tabooList[random].kelime1
+        word2.text = tabooList[random].kelime2
+        word3.text = tabooList[random].kelime3
+        word4.text = tabooList[random].kelime4
+        word5.text = tabooList[random].kelime5
+
+        Log.e("ERORORORO",tabooList.size.toString())
 
 
 
     }
 
     fun randomWord(view: View) {
-        var random = (0..tabooList.size).random()
+        var random = (0..(tabooList.size-1)).random()
+//        val wordModel2 = tabooList.random()
+//
+//        Log.e("ERORORORO",wordModel2.toString())
 
-        kelimeMain.text = tabooList[random].anaKelime
-        kelime1.text = tabooList[random].kelime1
-        kelime2.text = tabooList[random].kelime2
-        kelime3.text = tabooList[random].kelime3
-        kelime4.text = tabooList[random].kelime4
-        kelime5.text = tabooList[random].kelime5
+        wordMain.text = tabooList[random].anaKelime
+        word1.text = tabooList[random].kelime1
+        word2.text = tabooList[random].kelime2
+        word3.text = tabooList[random].kelime3
+        word4.text = tabooList[random].kelime4
+        word5.text = tabooList[random].kelime5
+
+//        wordMain.text = wordModel2.anaKelime
+//        word1.text = wordModel2.kelime1
+//        word2.text = wordModel2.kelime2
+//        word3.text = wordModel2.kelime3
+//        word4.text = wordModel2.kelime4
+//        word5.text = wordModel2.kelime5
     }
 }
