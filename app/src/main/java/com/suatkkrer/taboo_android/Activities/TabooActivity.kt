@@ -331,6 +331,8 @@ class TabooActivity : AppCompatActivity() {
     }
 
     fun randomWord(view: View) {
+
+
         var random = (0..(tabooList.size-1)).random()
 //        val wordModel2 = tabooList.random()
 //
