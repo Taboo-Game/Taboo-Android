@@ -61,8 +61,9 @@ class SettingsActivity : AppCompatActivity() {
 
         pasSeekBar.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener{
             override fun onProgressChanged(p0: SeekBar?, p1: Int, p2: Boolean) {
-                passText.text = "$p1"
-                pasSeek = p1
+                val progressCustom = 1 + p1
+                passText.text = "$progressCustom"
+                pasSeek = progressCustom
             }
 
             override fun onStartTrackingTouch(p0: SeekBar?) {
@@ -78,8 +79,10 @@ class SettingsActivity : AppCompatActivity() {
 
         timeSeekBar.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener{
             override fun onProgressChanged(p0: SeekBar?, p1: Int, p2: Boolean) {
-                timeText.text = "$p1"
-                timeSeek = p1
+                val progressCustom = 30 + p1
+                timeText.text = "$progressCustom"
+                timeSeek = progressCustom
+
             }
 
             override fun onStartTrackingTouch(p0: SeekBar?) {
@@ -93,8 +96,9 @@ class SettingsActivity : AppCompatActivity() {
 
         aimSeekBar.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener{
             override fun onProgressChanged(p0: SeekBar?, p1: Int, p2: Boolean) {
-                aimText.text = "$p1"
-                aimSeek = p1
+                val progressCustom = 5 + p1
+                aimText.text = "$progressCustom"
+                aimSeek = progressCustom
             }
 
             override fun onStartTrackingTouch(p0: SeekBar?) {
@@ -107,8 +111,9 @@ class SettingsActivity : AppCompatActivity() {
 
         drawingSeekBar.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener{
             override fun onProgressChanged(p0: SeekBar?, p1: Int, p2: Boolean) {
-                drawingText.text = "$p1"
-                drawingSeek = p1
+                val progressCustom = 30 + p1
+                drawingText.text = "$progressCustom"
+                drawingSeek = progressCustom
             }
 
             override fun onStartTrackingTouch(p0: SeekBar?) {
