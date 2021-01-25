@@ -38,13 +38,13 @@ class SettingsActivity : AppCompatActivity() {
             var drawData = cursor.getColumnIndex("draw")
 
             while (cursor.moveToNext()){
-                pasSeekBar.progress = cursor.getInt(pasData)
+                pasSeekBar.progress = cursor.getInt(pasData)-1
                 passText.text = cursor.getInt(pasData).toString()
-                timeSeekBar.progress = cursor.getInt(timeData)
+                timeSeekBar.progress = cursor.getInt(timeData)-30
                 timeText.text = cursor.getInt(timeData).toString()
-                aimSeekBar.progress = cursor.getInt(aimData)
+                aimSeekBar.progress = cursor.getInt(aimData)-5
                 aimText.text = cursor.getInt(aimData).toString()
-                drawingSeekBar.progress = cursor.getInt(drawData)
+                drawingSeekBar.progress = cursor.getInt(drawData)-60
                 drawingText.text = cursor.getInt(drawData).toString()
                 pasSeek = cursor.getInt(pasData)
                 timeSeek = cursor.getInt(timeData)
@@ -111,7 +111,7 @@ class SettingsActivity : AppCompatActivity() {
 
         drawingSeekBar.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener{
             override fun onProgressChanged(p0: SeekBar?, p1: Int, p2: Boolean) {
-                val progressCustom = 30 + p1
+                val progressCustom = 60 + p1
                 drawingText.text = "$progressCustom"
                 drawingSeek = progressCustom
             }
