@@ -1,6 +1,8 @@
 package com.suatkkrer.taboo_android.Activities
 
 import android.content.Context
+import android.database.Cursor
+import android.database.sqlite.SQLiteDatabase
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -9,6 +11,7 @@ import android.widget.EditText
 import android.widget.TextView
 import com.suatkkrer.taboo_android.R
 import com.suatkkrer.taboo_android.Model.WordModel
+import kotlinx.android.synthetic.main.activity_settings.*
 import kotlinx.android.synthetic.main.activity_taboo.*
 import java.lang.Exception
 import java.util.ArrayList
@@ -22,6 +25,9 @@ class TabooActivity : AppCompatActivity() {
     lateinit var word3 : TextView
     lateinit var word4 : TextView
     lateinit var word5 : TextView
+    var pas : Int = 3
+    var time : Int = 90
+    var aim : Int = 20
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -35,6 +41,30 @@ class TabooActivity : AppCompatActivity() {
         word3 = findViewById(R.id.kelime3)
         word4 = findViewById(R.id.kelime4)
         word5 = findViewById(R.id.kelime5)
+
+        try {
+            val sqliteDatabase : SQLiteDatabase = this.openOrCreateDatabase("Settings", MODE_PRIVATE, null)
+
+            sqliteDatabase.execSQL("CREATE TABLE IF NOT EXISTS settings (pas INTEGER, time INTEGER, aim INTEGER, draw INTEGER)")
+
+            val cursor : Cursor = sqliteDatabase.rawQuery("SELECT * FROM settings",null)
+
+            var pasData = cursor.getColumnIndex("pas")
+            var timeData = cursor.getColumnIndex("time")
+            var aimData = cursor.getColumnIndex("aim")
+            var drawData = cursor.getColumnIndex("draw")
+
+            while (cursor.moveToNext()){
+
+            }
+
+            cursor.close()
+
+        } catch (e: Exception) {
+            e.printStackTrace()
+        }
+
+
 
 
         tabooList.add(WordModel("FİİL","İŞ","OLUŞ","HAREKET","EYLEM","SÖZCÜK"))

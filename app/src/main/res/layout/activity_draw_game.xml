@@ -9,7 +9,7 @@
     android:weightSum="10"
     tools:context=".Activities.DrawGameActivity">
 
-    <com.suatkkrer.taboo_android.Activities.CanvasView
+    <com.suatkkrer.taboo_android.View.CanvasView
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="8"

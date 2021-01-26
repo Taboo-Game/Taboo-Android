@@ -24,7 +24,6 @@ class SettingsActivity : AppCompatActivity() {
         window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_FULLSCREEN
         actionBar?.hide()
 
-
         try {
             val sqliteDatabase : SQLiteDatabase = this.openOrCreateDatabase("Settings", MODE_PRIVATE, null)
 
@@ -56,6 +55,27 @@ class SettingsActivity : AppCompatActivity() {
 
         } catch (e: Exception) {
             e.printStackTrace()
+        }
+
+        if (pasSeek == null){
+            pasSeekBar.progress = 3
+            passText.text = "${3}"
+            pasSeek = 3
+        }
+        if (timeSeek == null){
+            timeSeekBar.progress = 90
+            timeText.text = "${90}"
+            timeSeek = 90
+        }
+        if (aimSeek == null){
+            aimSeekBar.progress = 20
+            aimText.text = "${20}"
+            aimSeek = 20
+        }
+        if (drawingSeek == null){
+            drawingSeekBar.progress = 150
+            drawingText.text = "${150}"
+            drawingSeek = 150
         }
 
 

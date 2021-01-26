@@ -1,4 +1,4 @@
-package com.suatkkrer.taboo_android.Activities;
+package com.suatkkrer.taboo_android.View;
 
 import android.content.Context;
 import android.graphics.Bitmap;

@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import com.suatkkrer.taboo_android.R
+import com.suatkkrer.taboo_android.View.CanvasView
 
 class DrawGameActivity : AppCompatActivity() {
 
