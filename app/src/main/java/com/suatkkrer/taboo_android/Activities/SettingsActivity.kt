@@ -57,23 +57,24 @@ class SettingsActivity : AppCompatActivity() {
             e.printStackTrace()
         }
 
+
         if (pasSeek == null){
-            pasSeekBar.progress = 3
+            pasSeekBar.progress = 2
             passText.text = "${3}"
             pasSeek = 3
         }
         if (timeSeek == null){
-            timeSeekBar.progress = 90
+            timeSeekBar.progress = 60
             timeText.text = "${90}"
             timeSeek = 90
         }
         if (aimSeek == null){
-            aimSeekBar.progress = 20
+            aimSeekBar.progress = 15
             aimText.text = "${20}"
             aimSeek = 20
         }
         if (drawingSeek == null){
-            drawingSeekBar.progress = 150
+            drawingSeekBar.progress = 90
             drawingText.text = "${150}"
             drawingSeek = 150
         }
