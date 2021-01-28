@@ -1,5 +1,6 @@
 package com.suatkkrer.taboo_android.Activities
 
+import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -12,6 +13,8 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_FULLSCREEN
         actionBar?.hide()
+
+
         
 
     }
