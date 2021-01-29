@@ -1,10 +1,13 @@
 package com.suatkkrer.taboo_android.Activities
 
 import android.content.Context
+import android.content.Intent
 import android.database.Cursor
 import android.database.sqlite.SQLiteDatabase
+import android.icu.util.UniversalTimeScale.toLong
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.CountDownTimer
 import android.util.Log
 import android.view.View
 import android.widget.EditText
@@ -25,9 +28,12 @@ class TabooActivity : AppCompatActivity() {
     lateinit var word3 : TextView
     lateinit var word4 : TextView
     lateinit var word5 : TextView
+    var counter : CountDownTimer? = null
     var pas : Int = 3
-    var time : Int = 90
+    var time : Int = 90000
     var aim : Int = 20
+    var timeKeeper : Int = 0
+    var pauseKeeper : Int = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -55,7 +61,9 @@ class TabooActivity : AppCompatActivity() {
             var drawData = cursor.getColumnIndex("draw")
 
             while (cursor.moveToNext()){
-
+                time = cursor.getInt(timeData)*1000
+                pas = cursor.getInt(pasData)
+                aim = cursor.getInt(aimData)
             }
 
             cursor.close()
@@ -63,6 +71,8 @@ class TabooActivity : AppCompatActivity() {
         } catch (e: Exception) {
             e.printStackTrace()
         }
+
+
 
 
 
@@ -356,7 +366,51 @@ class TabooActivity : AppCompatActivity() {
 
         Log.e("ERORORORO",tabooList.size.toString())
 
+        count()
 
+
+    }
+
+    fun count(){
+
+        countDown.text = ""
+
+        counter = object : CountDownTimer(time.toLong(), 1000){
+            override fun onTick(p0: Long) {
+                countDown.text = "${p0 / 1000}"
+            }
+
+            override fun onFinish() {
+                this.start()
+            }
+
+        }
+
+        (counter as CountDownTimer).start()
+
+    }
+
+    fun countContinue(){
+
+        countDown.text = timeKeeper.toString()
+
+
+        Log.e("sadfas",timeKeeper.toString())
+
+        counter = object : CountDownTimer((timeKeeper*1000).toLong(), 1000){
+
+
+            override fun onTick(p0: Long) {
+                countDown.text = "${p0 / 1000}"
+            }
+
+            override fun onFinish() {
+                this.start()
+            }
+
+        }
+
+        (counter as CountDownTimer).start()
 
     }
 
@@ -383,6 +437,44 @@ class TabooActivity : AppCompatActivity() {
 //        word5.text = wordModel2.kelime5
     }
 
-    fun pasClick(view: View) {}
-    fun falseClick(view: View) {}
+    fun pasClick(view: View) {
+
+    }
+
+    fun falseClick(view: View) {
+
+    }
+
+    fun backOnclick(view: View) {
+
+        val intent = Intent(this,TeamActivity::class.java)
+        startActivity(intent)
+        finish()
+    }
+
+    fun pauseOnClick(view: View) {
+
+        if (pauseKeeper == 0) {
+            counter!!.cancel()
+            timeKeeper = Integer.parseInt(countDown.text.toString())
+            pauseKeeper = 1
+            pauseTaboo.setImageResource(R.drawable.ic_baseline_play_arrow_24)
+            kelimeMain.visibility = View.INVISIBLE
+            kelime1.visibility = View.INVISIBLE
+            kelime2.visibility = View.INVISIBLE
+            kelime3.visibility = View.INVISIBLE
+            kelime4.visibility = View.INVISIBLE
+            kelime5.visibility = View.INVISIBLE
+        } else {
+            countContinue()
+            pauseKeeper = 0
+            pauseTaboo.setImageResource(R.drawable.ic_baseline_pause_24)
+            kelimeMain.visibility = View.VISIBLE
+            kelime1.visibility = View.VISIBLE
+            kelime2.visibility = View.VISIBLE
+            kelime3.visibility = View.VISIBLE
+            kelime4.visibility = View.VISIBLE
+            kelime5.visibility = View.VISIBLE
+        }
+    }
 }

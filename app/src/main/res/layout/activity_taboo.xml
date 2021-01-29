@@ -6,20 +6,54 @@
     android:layout_height="match_parent"
     android:background="#30475e"
     android:orientation="vertical"
-    android:weightSum="14"
+    android:weightSum="18"
     tools:context=".Activities.TabooActivity">
 
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30sp"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:background="@drawable/ic_baseline_arrow_back_24"
+            android:onClick="backOnclick"
+            />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="30"
         android:layout_gravity="center"
-        android:layout_marginTop="50dp"
         android:textSize="40sp"
         android:textColor="@color/white"
-        android:id="@+id/tabooTime"
+        android:id="@+id/countDown"
         />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_baseline_pause_24"
+            android:onClick="pauseOnClick"
+            android:layout_marginEnd="20dp"
+            android:id="@+id/pauseTaboo"
+            />
+
+    </LinearLayout>
 
 
     <LinearLayout
@@ -83,10 +117,11 @@
         android:textColor="@color/white"
         android:textStyle="bold"
         android:text="Kelime"
-        android:layout_weight="1.5"
+        android:layout_weight="3"
         android:layout_marginTop="60dp"
         android:textAlignment="center"
-        />
+        android:gravity="center_vertical"
+        tools:ignore="RtlCompat" />
 
     <TextView
         android:id="@+id/kelime1"
@@ -96,9 +131,10 @@
         android:textStyle="bold"
         android:textColor="@color/white"
         android:text="Kelime"
-        android:layout_weight="1.2"
-        android:layout_marginTop="30dp"
+        android:layout_weight="2.4"
         android:textAlignment="center"
+        android:gravity="center_vertical"
+        tools:ignore="RtlCompat"
         />
 
     <TextView
@@ -109,9 +145,10 @@
         android:textStyle="bold"
         android:textColor="@color/white"
         android:text="Kelime"
-        android:layout_weight="1.2"
-        android:layout_marginTop="30dp"
+        android:layout_weight="2.4"
         android:textAlignment="center"
+        android:gravity="center_vertical"
+        tools:ignore="RtlCompat"
         />
 
     <TextView
@@ -122,9 +159,10 @@
         android:textStyle="bold"
         android:textColor="@color/white"
         android:text="Kelime"
-        android:layout_weight="1.2"
-        android:layout_marginTop="30dp"
+        android:layout_weight="2.4"
         android:textAlignment="center"
+        android:gravity="center_vertical"
+        tools:ignore="RtlCompat"
         />
 
     <TextView
@@ -135,9 +173,10 @@
         android:textStyle="bold"
         android:textColor="@color/white"
         android:text="Kelime"
-        android:layout_weight="1.2"
-        android:layout_marginTop="30dp"
+        android:layout_weight="2.4"
         android:textAlignment="center"
+        android:gravity="center_vertical"
+        tools:ignore="RtlCompat"
         />
 
     <TextView
@@ -148,9 +187,10 @@
         android:textStyle="bold"
         android:textColor="@color/white"
         android:text="Kelime"
-        android:layout_weight="1.2"
-        android:layout_marginTop="30dp"
+        android:layout_weight="2.4"
         android:textAlignment="center"
+        android:gravity="center_vertical"
+        tools:ignore="RtlCompat"
         />
 
     <LinearLayout
