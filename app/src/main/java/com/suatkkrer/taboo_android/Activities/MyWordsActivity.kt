@@ -45,10 +45,12 @@ class MyWordsActivity : AppCompatActivity(), RecyclerViewAdapter.Listener {
             var kelime5SQL = cursor.getColumnIndex("kelime5")
 
             while (cursor.moveToNext()){
+
                 tabooList.add(WordModel(cursor.getString(anakelimeSQL),
                         cursor.getString(kelime1SQL),cursor.getString(kelime2SQL),
                         cursor.getString(kelime3SQL),cursor.getString(kelime4SQL),cursor.getString(kelime5SQL)))
                 idList.add(cursor.getInt(idSQL))
+
             }
 
             cursor.close()
