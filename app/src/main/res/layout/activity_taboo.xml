@@ -6,19 +6,85 @@
     android:layout_height="match_parent"
     android:background="#30475e"
     android:orientation="vertical"
-    android:weightSum="10"
+    android:weightSum="14"
     tools:context=".Activities.TabooActivity">
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="30"
+        android:layout_gravity="center"
+        android:layout_marginTop="50dp"
+        android:textSize="40sp"
+        android:textColor="@color/white"
+        android:id="@+id/tabooTime"
+        />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30sp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1.Takım"
+            android:textSize="35sp"
+            android:textColor="@color/white"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:textSize="35sp"
+            android:layout_marginStart="10dp"
+            android:text="0"
+            android:id="@+id/firstTeamPoint"
+            />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:textSize="35sp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginStart="10dp"
+            android:text="0"
+            android:id="@+id/secondTeamPoint"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1.Takım"
+            android:textSize="35sp"
+            android:layout_gravity="center"
+            android:textColor="@color/white"
+            />
+
+
+
+    </LinearLayout>
 
     <TextView
         android:id="@+id/kelimeMain"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:textSize="50sp"
+        android:textSize="30sp"
         android:textColor="@color/white"
         android:textStyle="bold"
         android:text="Kelime"
         android:layout_weight="1.5"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="60dp"
         android:textAlignment="center"
         />
 
@@ -26,7 +92,7 @@
         android:id="@+id/kelime1"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:textSize="40sp"
+        android:textSize="25sp"
         android:textStyle="bold"
         android:textColor="@color/white"
         android:text="Kelime"
@@ -39,7 +105,7 @@
         android:id="@+id/kelime2"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:textSize="40sp"
+        android:textSize="25sp"
         android:textStyle="bold"
         android:textColor="@color/white"
         android:text="Kelime"
@@ -52,7 +118,7 @@
         android:id="@+id/kelime3"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:textSize="40sp"
+        android:textSize="25sp"
         android:textStyle="bold"
         android:textColor="@color/white"
         android:text="Kelime"
@@ -65,7 +131,7 @@
         android:id="@+id/kelime4"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:textSize="40sp"
+        android:textSize="25sp"
         android:textStyle="bold"
         android:textColor="@color/white"
         android:text="Kelime"
@@ -78,7 +144,7 @@
         android:id="@+id/kelime5"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:textSize="40sp"
+        android:textSize="25sp"
         android:textStyle="bold"
         android:textColor="@color/white"
         android:text="Kelime"
@@ -87,13 +153,49 @@
         android:textAlignment="center"
         />
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="0dp"
-        android:layout_weight="1"
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
-        android:layout_gravity="center"
-        android:onClick="randomWord"
-        />
+        android:orientation="horizontal">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_marginStart="20dp"
+            android:text="Yanlış"
+            android:onClick="falseClick"
+            />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:text="Pas"
+            android:onClick="pasClick"
+            />
+
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:text="Doğru"
+            android:layout_height="50dp"
+            android:onClick="randomWord"
+            android:layout_marginEnd="20dp"
+            />
+
+    </LinearLayout>
+
+
 
 </LinearLayout>

@@ -382,4 +382,7 @@ class TabooActivity : AppCompatActivity() {
 //        word4.text = wordModel2.kelime4
 //        word5.text = wordModel2.kelime5
     }
+
+    fun pasClick(view: View) {}
+    fun falseClick(view: View) {}
 }
