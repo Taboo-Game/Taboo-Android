@@ -24,6 +24,8 @@ public class CanvasView extends View {
         super(context,attrs);
         this.context=context;
 
+
+
         mPath=new Path();
 
         mPaint=new Paint();
