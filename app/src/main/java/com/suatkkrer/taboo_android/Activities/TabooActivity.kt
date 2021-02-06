@@ -74,10 +74,6 @@ class TabooActivity : AppCompatActivity() {
         }
 
 
-
-
-
-
         tabooList.add(WordModel("FİİL","İŞ","OLUŞ","HAREKET","EYLEM","SÖZCÜK"))
         tabooList.add(WordModel("UYAK", "ŞİİR", "DİZE", "BENZERLİK", "KAFİYE", "SES"))
         tabooList.add(WordModel("SÖZLÜK","ANLAM","KELİME","SÖZCÜK","AÇIKLAMA","LÜGAT"))
