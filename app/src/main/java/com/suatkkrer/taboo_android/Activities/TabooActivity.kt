@@ -36,6 +36,7 @@ class TabooActivity : AppCompatActivity() {
     var pauseKeeper : Int = 0
 
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_taboo)
