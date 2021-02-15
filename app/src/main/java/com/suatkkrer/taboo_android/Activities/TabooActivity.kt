@@ -12,10 +12,13 @@ import android.util.Log
 import android.view.View
 import android.widget.EditText
 import android.widget.TextView
+import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import com.suatkkrer.taboo_android.R
 import com.suatkkrer.taboo_android.Model.WordModel
 import kotlinx.android.synthetic.main.activity_settings.*
 import kotlinx.android.synthetic.main.activity_taboo.*
+import java.io.File
 import java.lang.Exception
 import java.util.ArrayList
 
@@ -447,9 +450,20 @@ class TabooActivity : AppCompatActivity() {
 
     fun backOnclick(view: View) {
 
-        val intent = Intent(this,TeamActivity::class.java)
-        startActivity(intent)
-        finish()
+        val mAlertDialog = AlertDialog.Builder(this@TabooActivity)
+        mAlertDialog.setIcon(R.mipmap.ic_launcher_round) //set alertdialog icon
+        mAlertDialog.setTitle("Çıkış") //set alertdialog title
+        mAlertDialog.setMessage("Çıkmak istediğinize emin misiniz?") //set alertdialog message
+        mAlertDialog.setPositiveButton("Evet") { dialog, id ->
+
+            val intent = Intent(this,TeamActivity::class.java)
+                    .setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK)
+            startActivity(intent)
+            finish()}
+        mAlertDialog.setNegativeButton("Hayır") { dialog, id ->
+            //perform som tasks here
+        }
+        mAlertDialog.show()
     }
 
     fun pauseOnClick(view: View) {
