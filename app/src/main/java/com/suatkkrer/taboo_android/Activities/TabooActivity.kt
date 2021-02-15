@@ -1,15 +1,19 @@
 package com.suatkkrer.taboo_android.Activities
 
+import android.app.Dialog
 import android.content.Context
 import android.content.Intent
 import android.database.Cursor
 import android.database.sqlite.SQLiteDatabase
+import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
 import android.icu.util.UniversalTimeScale.toLong
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.CountDownTimer
 import android.util.Log
 import android.view.View
+import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
@@ -18,6 +22,7 @@ import com.suatkkrer.taboo_android.R
 import com.suatkkrer.taboo_android.Model.WordModel
 import kotlinx.android.synthetic.main.activity_settings.*
 import kotlinx.android.synthetic.main.activity_taboo.*
+import kotlinx.android.synthetic.main.custompopup.*
 import java.io.File
 import java.lang.Exception
 import java.util.ArrayList
@@ -31,20 +36,21 @@ class TabooActivity : AppCompatActivity() {
     lateinit var word3 : TextView
     lateinit var word4 : TextView
     lateinit var word5 : TextView
+    lateinit var myDialog : Dialog
     var counter : CountDownTimer? = null
     var pas : Int = 3
     var time : Int = 90000
     var aim : Int = 20
     var timeKeeper : Int = 0
     var pauseKeeper : Int = 0
+    var teamPoint : Int = 0
 
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_taboo)
-        window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_FULLSCREEN
-        actionBar?.hide()
+
 
         wordMain = findViewById(R.id.kelimeMain)
         word1 = findViewById(R.id.kelime1)
@@ -52,6 +58,7 @@ class TabooActivity : AppCompatActivity() {
         word3 = findViewById(R.id.kelime3)
         word4 = findViewById(R.id.kelime4)
         word5 = findViewById(R.id.kelime5)
+        myDialog = Dialog(this)
 
 
 
@@ -374,6 +381,7 @@ class TabooActivity : AppCompatActivity() {
 
     }
 
+
     fun count(){
 
         countDown.text = ""
@@ -384,7 +392,20 @@ class TabooActivity : AppCompatActivity() {
             }
 
             override fun onFinish() {
-                this.start()
+                myDialog.setContentView(R.layout.custompopup)
+                var teamButton : Button = myDialog.findViewById(R.id.changeTeam)
+                teamButton.setOnClickListener {
+                    if (teamPoint == 0) {
+                        teamPoint = 1
+                        myDialog.dismiss()
+                    } else {
+                        teamPoint = 0
+                        myDialog.dismiss()
+                    }
+                    Log.e("ALOAOAOAOAO",teamPoint.toString())
+                }
+                myDialog.window!!.setBackgroundDrawable(ColorDrawable(Color.BLACK))
+                myDialog.show()
             }
 
         }
@@ -408,7 +429,20 @@ class TabooActivity : AppCompatActivity() {
             }
 
             override fun onFinish() {
-                this.start()
+                myDialog.setContentView(R.layout.custompopup)
+                var teamButton : Button = myDialog.findViewById(R.id.changeTeam)
+                teamButton.setOnClickListener {
+                    if (teamPoint == 0) {
+                        teamPoint = 1
+                        myDialog.dismiss()
+                    } else {
+                        teamPoint = 0
+                        myDialog.dismiss()
+                    }
+                }
+                Log.e("ALOAOAOAOAO",teamPoint.toString())
+                myDialog.window!!.setBackgroundDrawable(ColorDrawable(Color.BLACK))
+                myDialog.show()
             }
 
         }
