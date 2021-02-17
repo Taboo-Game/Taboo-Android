@@ -55,8 +55,6 @@ class TabooActivity : AppCompatActivity() {
         word5 = findViewById(R.id.kelime5)
         myDialog = Dialog(this)
 
-
-
         try {
             val sqliteDatabase : SQLiteDatabase = this.openOrCreateDatabase("Settings", MODE_PRIVATE, null)
 
