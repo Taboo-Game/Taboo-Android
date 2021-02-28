@@ -585,6 +585,9 @@ class TabooActivity : AppCompatActivity() {
             timeKeeper = Integer.parseInt(countDown.text.toString())
             pauseKeeper = 1
             pauseTaboo.setImageResource(R.drawable.ic_baseline_play_arrow_24)
+            trueButton.visibility = View.INVISIBLE
+            falseButton.visibility = View.INVISIBLE
+            passButton.visibility = View.INVISIBLE
             kelimeMain.visibility = View.INVISIBLE
             kelime1.visibility = View.INVISIBLE
             kelime2.visibility = View.INVISIBLE
@@ -594,6 +597,9 @@ class TabooActivity : AppCompatActivity() {
         } else {
             countContinue()
             pauseKeeper = 0
+            trueButton.visibility = View.VISIBLE
+            falseButton.visibility = View.VISIBLE
+            passButton.visibility = View.VISIBLE
             pauseTaboo.setImageResource(R.drawable.ic_baseline_pause_24)
             kelimeMain.visibility = View.VISIBLE
             kelime1.visibility = View.VISIBLE
